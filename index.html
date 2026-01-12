@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-text="SKOROCHTENIE - Альбом">SKOROCHTENIE - Альбом</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Эффекты фона -->
+    <div class="battle-flashes" aria-hidden="true"></div>
+    <div class="snowflakes" aria-hidden="true"></div>
+    <div class="muzzle-flashes" aria-hidden="true"></div>
+    <div class="tv-static" id="tv-static" aria-hidden="true"></div>
+    <div class="glitch-container">
+        <div class="glitch" aria-hidden="true"></div>
+    </div>
+    
+    <!-- Кнопка мобильного меню -->
+    <button id="mobile-menu-btn" class="mobile-menu-btn" title="Меню треков">
+        <span>☰ ТРЕКИ</span>
+    </button>
+
+    <!-- Затемнение фона (Оверлей) -->
+    <div id="menu-overlay" class="menu-overlay"></div>
+
+    <div class="container">
+        <nav id="track-menu" class="track-menu">
+            <div class="mobile-menu-header">
+                <h2>МЕНЮ</h2>
+                <button id="close-menu-btn" class="close-menu-btn">×</button>
+            </div>
+            <ul id="track-list">
+                <!-- Треки и элемент "о чем этот альбом" будут добавлены через JavaScript -->
+            </ul>
+        </nav>
+        
+        <main class="track-content">
+            <h1 class="album-title">SKOROCHTENIE</h1>
+            <div class="player-container">
+                <div class="image-wrapper">
+                    <img id="track-img" src="" alt="Обложка трека" class="player-image">
+                    
+                    <!-- Плеер находится внутри image-wrapper и прижат к низу -->
+                    <div class="player-overlay">
+                        <div class="track-info">
+                            <h3 id="track-title">Выберите трек</h3>
+                        </div>
+                        
+                        <div class="custom-player">
+                            <div class="player-controls">
+                                <button id="prev-btn" class="control-btn" title="Предыдущий трек">
+                                    <i class="control-icon">⏮</i>
+                                </button>
+                                <button id="play-btn" class="control-btn play-pause-btn" title="Воспроизвести">
+                                    <i class="control-icon play-icon">▶</i>
+                                    <i class="control-icon pause-icon">⏸</i>
+                                </button>
+                                <button id="next-btn" class="control-btn" title="Следующий трек">
+                                    <i class="control-icon">⏭</i>
+                                </button>
+                            </div>
+                            
+                            <div class="progress-container">
+                                <span id="current-time" class="time">0:00</span>
+                                <input type="range" id="progress-bar" class="progress-bar" value="0" min="0" step="any">
+                                <span id="duration" class="time">0:00</span>
+                            </div>
+                            
+                            <div class="volume-container">
+                                <i class="volume-icon">🔈</i>
+                                <input type="range" id="volume-bar" class="volume-bar" min="0" max="1" step="0.01" value="0.7">
+                                <i class="volume-icon">🔊</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <audio id="track-player">
+                    Ваш браузер не поддерживает аудио.
+                </audio>
+            </div>
+            
+            <div class="track-texts">
+                <details class="song-text">
+                    <summary data-text="Текст песни">Текст песни</summary>
+                    <div id="song-lyrics">Выберите трек для отображения текста</div>
+                </details>
+                
+                <details class="decoding-text">
+                    <summary data-text="Декодинг текста">Декодинг текста</summary>
+                    <div id="song-decoding">Выберите трек для отображения декодинга</div>
+                </details>
+            </div>
+        </main>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/tracks.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
